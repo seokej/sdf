@@ -1,0 +1,67 @@
+.serviceWrap {
+  padding: 60px 0px;
+  text-align: center;
+  background-color: #f8f8f8;
+
+  .serviceInner {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    .h1 {
+      font-size: 40px;
+
+      @media (max-width: 768px) {
+        font-size: 28px;
+      }
+    }
+
+    .serviceListWrap {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      margin-top: 40px;
+      overflow: hidden;
+
+      @media (max-width: 1180px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .serviceListWrap__list {
+        padding: 0px 5px;
+        text-align: center;
+      }
+
+      @for $i from 1 through 9 {
+        .serviceListWrap__list:nth-child(#{$i}) .serviceListWrap__listItem {
+          background: url(/images/sdf/ico/ico_s0#{$i}.png)
+            no-repeat
+            center
+            20px;
+        }
+      }
+
+      .serviceListWrap__listItem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 150px;
+        padding: 100px 0 10px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #7b7b7b;
+        word-break: keep-all;
+
+        &:hover {
+          font-weight: 700;
+          color: #134796;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+        }
+
+        .serviceListWrap_itemText {
+          letter-spacing: -1.5px;
+        }
+      }
+    }
+  }
+}

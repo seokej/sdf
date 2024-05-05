@@ -1,9 +1,6 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -100,8 +97,175 @@ a {
   text-decoration: none;
 }
 
+input,
+button,
+textarea,
+select {
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+/* 말줄임 관련 코드 */
+.lineClamp4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 모달 dim처리 코드 */
+.dim {
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+/* 접근성 관련 코드 */
+#accessibility {
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+#accessibility a {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 100%;
+  height: 1px;
+  margin-bottom: -1px;
+  background: #f2f2f2;
+  font-size: 0;
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+#accessibility a:hover, 
+#accessibility a:focus, 
+#accessibility a:active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3px;
+  height: 25px;
+  font-size: 15px;
+  outline-offset: -3px;
+}
+
+.blind {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  line-height: 999px;
+  overflow: hidden;
+}
+
+/* 스크롤 관련 */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 100;
+  src:
+    local("SUIT Thin"),
+    url("/font/SUIT-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 200;
+  src:
+    local("SUIT ExtraLight"),
+    url("/font/SUIT-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 300;
+  src:
+    local("SUIT Light"),
+    url("/SUIT-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 400;
+  src:
+    local("SUIT Regular"),
+    url("/font/SUIT-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 500;
+  src:
+    local("SUIT Medium"),
+    url("/font/SUIT-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 600;
+  src:
+    local("SUIT SemiBold"),
+    url("/font/SUIT-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 700;
+  src:
+    local("SUIT Bold"),
+    url("/font/SUIT-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 800;
+  src:
+    local("SUIT ExtraBold"),
+    url("/font/SUIT-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 900;
+  src:
+    local("SUIT Heavy"),
+    url("/font/SUIT-Heavy.woff2") format("woff2");
 }
